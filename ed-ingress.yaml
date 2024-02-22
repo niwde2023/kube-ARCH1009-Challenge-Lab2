@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ed-ingress
+spec:
+  rules:
+  - host: edexample.com  # Change this to your domain or IP address
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ed-service  # Replace <name> with your Service name
+            port:
+              number: 80
+
